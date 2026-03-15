@@ -1,21 +1,10 @@
-/*
- *   Copyright 2014 Marco Martin <mart@kde.org>
- *
- *   This program is free software; you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License version 2,
- *   or (at your option) any later version, as published by the Free
- *   Software Foundation
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details
- *
- *   You should have received a copy of the GNU General Public
- *   License along with this program; if not, write to the
- *   Free Software Foundation, Inc.,
- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
+ /*
+    SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2025 ferretwithaberet <andreiradoidev@gmail.com>
+    SPDX-FileCopyrightText: 2026 Gimle Larpes <gimlelarpes@gmail.com>
+
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
 
 import QtQuick 2.5
 import QtQuick.Window 2.2
@@ -63,7 +52,7 @@ Rectangle {
         Image {
             id: busyIndicator
             //in the middle of the remaining space
-            y: parent.height - 150
+            y: parent.height - 200
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.margins: units.gridUnit
             source: "images/busywidget.svgz"
@@ -79,28 +68,5 @@ Rectangle {
             }
         }
 
-        Row {
-        	opacity: 0.3
-            spacing: units.smallSpacing*2
-            anchors {
-                bottom: parent.bottom
-                // right: parent.right
-                margins: units.gridUnit
-            }
-            anchors.horizontalCenter: parent.horizontalCenter
-            Text {
-                color: "#eff0f1"
-                // Work around Qt bug where NativeRendering breaks for non-integer scale factors
-                // https://bugreports.qt.io/browse/QTBUG-67007
-                renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
-                anchors.verticalCenter: parent.verticalCenter
-                text: "Welcome to Plasma"
-            }
-            Image {
-                source: "images/kde.svgz"
-                sourceSize.height: units.gridUnit * 2
-                sourceSize.width: units.gridUnit * 2
-            }
-        }
     }
 }
